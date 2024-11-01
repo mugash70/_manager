@@ -1,0 +1,1 @@
+npx @chakra-ui/cli snippet add close-button
