@@ -8,11 +8,11 @@ import {NavItem} from '@/components/ui/nav-items'
 export const Sidebar = () => {
 const { isOpen, onOpen, onClose } = useDisclosure();
   const LinkItems = [
-    { name: 'Home', icon: FiHome },
-    { name: 'Trending', icon: FiTrendingUp },
-    { name: 'Explore', icon: FiCompass },
-    { name: 'Favourites', icon: FiStar },
-    { name: 'Sign Out', icon: FiSettings },
+    { name: 'Home', icon: FiHome ,link:'/dashboard' },
+    { name: 'Sales', icon: FiTrendingUp,link:'/dashboard/sales' },
+    { name: 'Stokes', icon: FiCompass,link:'/dashboard/stokes' },
+    { name: 'Reports', icon: FiStar,link:'/dashboard/reports' },
+    { name: 'Sign Out', icon: FiSettings,link:'/dashboard' },
   ]
   return (
     

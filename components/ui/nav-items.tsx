@@ -3,6 +3,8 @@ import {Flex,Text,Icon,Box, ClientOnly,Skeleton,} from "@chakra-ui/react"
 import { IconType } from 'react-icons'
 import { ColorModeToggle } from "@/components/ui/color-mode-toggle"
 import {FiLogOut,} from 'react-icons/fi'
+import NextLink from 'next/link';
+
 interface NavItemProps {
     data: Array<{
         name: string;
@@ -18,7 +20,9 @@ export const NavItem = ({ data }: NavItemProps) => {
                     <Box as="a" key={link.name} style={{ textDecoration: "none" }} _focus={{ boxShadow: "none" }}>
                         <Flex align="center" p="4" mx="4" borderRadius="lg" role="group" cursor="pointer" _hover={{ bg: 'cyan.400', color: 'white' }}>
                             {link.icon && <link.icon fontSize="16"  mr="2" />}
-                            <Text>{link.name}</Text>
+                            <NextLink href={link.link} passHref>
+                                {link.name}
+                            </NextLink>
                         </Flex>
                     </Box>
                 ))}

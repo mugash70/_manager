@@ -23,23 +23,60 @@ const cardData = [
   { id: 18, title: "Nike Air Max", amount: "$120", stock: 75, image: "https://picsum.photos/id/290/200/300" },
 ];
 
+// export default function StockCards() {
+//   return (
+//     <Box maxH="90vh" maxW="100vw"  overflowY="auto" p={4}  borderRadius="lg" css={{'&::-webkit-scrollbar': { display: 'none' },'-ms-overflow-style': 'none','scrollbar-width': 'none',}} ml='20'>
+//     <Grid templateColumns={{ base: "repeat(4, 1fr)", md: "repeat(6, 1fr)" }} gap={6}  mx="auto">
+//       {cardData.map((card) => (
+//         <Card.Root key={card.id} maxH='300px' boxShadow="2xl" borderRadius="lg" overflow="hidden">
+//           <Card.Body gap="3" p={3}>
+//             <Image src={card.image} alt={card.title}  maxH="30%"/>
+//             <Card.Title fontSize="md" mt="2" textStyle="xs">{card.title}</Card.Title>
+//             <Text textStyle="xs">Price: {card.amount}</Text>
+//             <Text textStyle="xs">In Stock: {card.stock}</Text>
+//             <Box  justifyContent="flex-end" ><Button variant="outline">Add stocks</Button></Box >
+//           </Card.Body>
+    
+//         </Card.Root>
+//       ))}
+//     </Grid>
+//  </Box>
+//   );
+// }
 export default function StockCards() {
   return (
-    <Box maxH="90vh" maxW="100vw"  overflowY="auto" p={4}  borderRadius="lg" css={{'&::-webkit-scrollbar': { display: 'none' },'-ms-overflow-style': 'none','scrollbar-width': 'none',}} ml='20'>
-    <Grid templateColumns={{ base: "repeat(4, 1fr)", md: "repeat(6, 1fr)" }} gap={6}  mx="auto">
-      {cardData.map((card) => (
-        <Card.Root key={card.id} maxH='300px' boxShadow="2xl" borderRadius="lg" overflow="hidden">
-          <Card.Body gap="3" p={3}>
-            <Image src={card.image} alt={card.title}  maxH="30%"/>
-            <Card.Title fontSize="md" mt="2" textStyle="xs">{card.title}</Card.Title>
-            <Text textStyle="xs">Price: {card.amount}</Text>
-            <Text textStyle="xs">In Stock: {card.stock}</Text>
-            <Box  justifyContent="flex-end" ><Button variant="outline">Add stocks</Button></Box >
-          </Card.Body>
-    
-        </Card.Root>
-      ))}
-    </Grid>
- </Box>
+    <Box 
+      maxH="90vh" 
+      maxW="100vw"  
+      overflowY="auto" 
+      p={4}  
+      borderRadius="lg" 
+      css={{
+        '&::-webkit-scrollbar': { display: 'none' },
+        '-ms-overflow-style': 'none',
+        'scrollbar-width': 'none',
+      }} 
+      ml='20'
+    >
+      <Grid 
+        templateColumns={{ base: "1fr", sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" }} 
+        gap={6}  
+        mx="auto"
+      >
+        {cardData.map((card) => (
+          <Card.Root key={card.id} maxH='300px' boxShadow="2xl" borderRadius="lg" overflow="hidden">
+            <Card.Body gap="3" p={3}>
+              <Image src={card.image} alt={card.title} maxH="30%" />
+              <Card.Title fontSize="md" mt="2" textStyle="xs">{card.title}</Card.Title>
+              <Text textStyle="xs">Price: {card.amount}</Text>
+              <Text textStyle="xs">In Stock: {card.stock}</Text>
+              <Box justifyContent="flex-end">
+                <Button variant="outline">Add stocks</Button>
+              </Box>
+            </Card.Body>
+          </Card.Root>
+        ))}
+      </Grid>
+    </Box>
   );
 }
